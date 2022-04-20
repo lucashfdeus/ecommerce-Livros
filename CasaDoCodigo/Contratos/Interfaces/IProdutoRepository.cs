@@ -1,5 +1,6 @@
 ﻿using CasaDoCodigo.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Contratos.Interfaces
 {

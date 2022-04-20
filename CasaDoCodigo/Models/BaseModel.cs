@@ -2,6 +2,7 @@
 
 namespace CasaDoCodigo.Models
 {
+    [DataContract]
     public class BaseModel
     {
         [DataMember]
