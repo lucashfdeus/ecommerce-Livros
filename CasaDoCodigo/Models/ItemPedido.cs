@@ -28,9 +28,11 @@ namespace CasaDoCodigo.Models
         [DataMember]
         public Produto Produto { get; private set; }           
 
+
         [Required]
         [DataMember]
         public int Quantidade { get; private set; }
+
         [Required]
         [DataMember]
         public decimal PrecoUnitario { get; private set; }

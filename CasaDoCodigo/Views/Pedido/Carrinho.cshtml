@@ -3,6 +3,8 @@
 }
 @model CarrinhoViewModel;
 
+@model CarrinhoViewModel;
+
 <h3>Meu Carrinho</h3>
 
 <div class="panel panel-default">
@@ -45,8 +47,7 @@
                             </button>
                         </span>
                         <input type="text" value="@(item.Quantidade)"
-                               class="form-control text-center" 
-                               onblur="carrinho.updateQuantidade(this)"/>
+                           class="form-control text-center" />
                         <span class="input-group-btn">
                             <button class="btn btn-default"
                                     onclick="carrinho.clickIncremento(this)">
@@ -88,22 +89,15 @@
             <a class="btn btn-success" asp-action="carrossel">
                 Adicionar Produtos
             </a>
-            @* <a class="btn btn-success" asp-action="cadastro">
+           @* <a class="btn btn-success" asp-action="cadastro">
                 Preencher Cadastro
-                </a>*@
+            </a>*@
 
-            @* O botão de preencher cadastro foi desativado provisoriamente.*@
+           @* O botão de preencher cadastro foi desativado provisoriamente.*@
 
-            <a class="btn btn-success" asp-action="resumo">
+              <a class="btn btn-success" asp-action="resumo">
                 Finalizar Pedido
             </a>
         </div>
     </div>
 </div>
-
-@section Scripts
-{
-    <script src="~/js/carrinho.js">
-
-    </script>
-}

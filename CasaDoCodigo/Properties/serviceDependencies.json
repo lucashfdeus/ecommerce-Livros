@@ -1,14 +1,16 @@
 {
   "dependencies": {
+    "appInsights1": {
+      "type": "appInsights",
+      "connectionId": null
+    },
     "secrets1": {
-      "type": "secrets"
+      "type": "secrets",
+      "connectionId": null
     },
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:CasaDoCodigo"
-    },
-    "appInsights1": {
-      "type": "appInsights"
     }
   }
 }
