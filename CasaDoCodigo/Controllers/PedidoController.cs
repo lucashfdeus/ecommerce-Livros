@@ -1,6 +1,12 @@
 ﻿using CasaDoCodigo.Contratos.Interfaces;
 using CasaDoCodigo.Models;
+using CasaDoCodigo.Models.ViewModels;
+using CasaDoCodigo.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Controllers
 {
@@ -10,14 +16,13 @@ namespace CasaDoCodigo.Controllers
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IItemPedidoRepository _itemPedidoRepository;
 
-        public PedidoController(
-            IProdutoRepository produtoRepository,
+        public PedidoController(IProdutoRepository produtoRepository,
             IPedidoRepository pedidoRepository,
             IItemPedidoRepository itemPedidoRepository)
         {
-           _produtoRepository = produtoRepository;
-           _pedidoRepository = pedidoRepository;
-           _itemPedidoRepository = itemPedidoRepository;
+            _produtoRepository = produtoRepository;
+            this._pedidoRepository = pedidoRepository;
+            this._itemPedidoRepository = itemPedidoRepository;
         }
 
         public IActionResult Carrossel()
@@ -32,9 +37,9 @@ namespace CasaDoCodigo.Controllers
                 _pedidoRepository.AddItem(codigo);
             }
 
-			List<ItemPedido> itens = _pedidoRepository.GetPedido().Itens;
+            List<ItemPedido> itens = _pedidoRepository.GetPedido().Itens;
             CarrinhoViewModel carrinhoViewModel = new CarrinhoViewModel(itens);
-			return base.View( carrinhoViewModel );
+            return base.View(carrinhoViewModel);
         }
 
         public IActionResult Cadastro()
@@ -52,12 +57,5 @@ namespace CasaDoCodigo.Controllers
         {
             return _pedidoRepository.UpdateQuantidade(itemPedido);
         }
-
-        [HttpPost]
-        public UpdateQuantidadeResponse UpdateQuantidade([FromBody]ItemPedido itemPedido)
-        {
-           return _pedidoRepository.UpdateQuantidade(itemPedido);
-        }
     }
-
 }

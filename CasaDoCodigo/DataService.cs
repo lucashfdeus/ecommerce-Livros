@@ -13,10 +13,10 @@ namespace CasaDoCodigo
         private readonly IProdutoRepository _produtoRepository;
 
         public DataService(ApplicationContext contexto,
-                    IProdutoRepository produtoRepository)
+            IProdutoRepository produtoRepository)
         {
-            this._contexto = contexto;
-            this._produtoRepository = produtoRepository;
+            _contexto = contexto;
+            _produtoRepository = produtoRepository;
         }
 
         public void InicializaDB()
@@ -30,7 +30,7 @@ namespace CasaDoCodigo
 
         private static List<Livro> GetLivros()
         {
-            var json = File.ReadAllText(@"livros.json");
+            var json = File.ReadAllText("livros.json");
             var livros = JsonConvert.DeserializeObject<List<Livro>>(json);
             return livros;
         }

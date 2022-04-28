@@ -22,6 +22,5 @@ namespace CasaDoCodigo.Models
             this.Nome = nome;
             this.Preco = preco;
         }
-
     }
 }

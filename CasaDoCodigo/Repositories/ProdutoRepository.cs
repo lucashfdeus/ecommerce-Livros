@@ -25,7 +25,7 @@ namespace CasaDoCodigo.Repositories
                     dbSet.Add(new Produto(livro.Codigo, livro.Nome, livro.Preco));
                 }
             }
-            contexto.SaveChanges();
+            _contexto.SaveChanges();
         }
     }
 }
